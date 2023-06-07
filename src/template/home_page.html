@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+<title>Home Page Template</title>
+
+{% block content %}
+<head>
+    <div class='text-center'>
+        <h1>{{ title }}</h1>
+             <p>{{ content }}</p>
+    </div>
+	<div class='text-center'>
+    <div class='container'>
+	<div class='row'>
+	    <div class='col'>
+		<img src="{% static 'img/logo_supertech.jpg' %}" class='img-fluid' />
+		<p>{{ content }}</p>
+	    </div>
+	</div>
+	</div>
+</head>
+<body>
+	{% if request.user.is_authenticated %}
+		<div class='text-center'>
+	    <div class='row'>
+		<div class='col'>
+		    <h1>Premium</h1>
+			<p>{{ premium_content }}</p>
+		</div>
+		</div>
+	    </div>
+	{% endif %}
+    </div>
+</body>
+{% endblock %}
