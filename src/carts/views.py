@@ -11,7 +11,7 @@ from billing.models import BillingProfile
 from orders.models import Order
 from products.models import Product
 from .models import Cart
-\
+
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
 
@@ -29,7 +29,7 @@ def cart_detail_api_view(request):
     #         {"name": x.title, "price": x.price}
     #     })
     cart_data = {"products": products, "subtotal": cart_obj.subtotal, "total": cart_obj.total}
-    return JsonResponse({"message", "Erro 400"}, status = 400)
+    return JsonResponse(cart_data)
 
 def cart_home(request):
     cart_obj, new_obj = Cart.objects.new_or_get(request)
