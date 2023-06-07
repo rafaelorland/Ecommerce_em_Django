@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class='row'>
-    <div class='col-12 col-md-6'>
-      <h1>{{ object.title }}</h1>
-      {{ object.description|linebreaks }}<br/>
-      {% if object.image %}
-        <img src='{{ object.image.url }}' class='img-fluid' />
-       {% endif %}
-    </div>
-    <div class='col-12 col-md-6'>
-      {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+<body>
+  <div class="u-container-layout u-container-layout-1"><!--product_image-->
+    {% if object.image %}
+    <img src="{{ object.image.url }}" alt="" class="u-image u-image-default u-product-control u-image-1" data-image-width="750" data-image-height="750"><!--/product_image-->
+    {% endif %}
+    <div class="u-align-center u-container-style u-expanded-width-md u-group u-shape-rectangle u-white u-group-1">
+      <div class="u-container-layout u-valign-middle-xl u-valign-middle-xs u-valign-top-lg u-valign-top-md u-valign-top-sm u-container-layout-2"><!--product_title-->
+        <h2 class="u-product-control u-text u-text-default u-text-1">
+          <a class="u-product-title"> 
+            <div class='u-text u-text-grey-15'>
+              <h1>{{ object.title }}</h1>
+            </div>
+            <div class="u-price" style="font-size: 4.5rem; font-weight: 700;"> <a>R${{object.price}}</a> </div>
+          </div>
+        </div><!--/product_price--><!--product_content-->
+        <div class="u-product-control u-product-desc u-text u-text-grey-15 u-text-2"><!--product_content_content-->
+          <p>{{ object.description|linebreaks }}</p><!--/product_content_content-->
+        </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":""}--><!--/options_json-->
+        {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+      </div>
     </div>
   </div>
+</body>
 {% endblock %}
