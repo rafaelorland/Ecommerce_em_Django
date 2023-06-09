@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <body>
   <div class="u-container-layout u-container-layout-1"><!--product_image-->
     {% if object.image %}
@@ -18,7 +19,9 @@
         <div class="u-product-control u-product-desc u-text u-text-grey-15 u-text-2"><!--product_content_content-->
           <p>{{ object.description|linebreaks }}</p><!--/product_content_content-->
         </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":""}--><!--/options_json-->
-        {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+        <div class="fa fa-shopping-cart">
+          {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+        </div>
       </div>
     </div>
   </div>

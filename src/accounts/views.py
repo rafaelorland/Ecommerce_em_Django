@@ -22,8 +22,8 @@ def guest_register_view(request):
         if url_has_allowed_host_and_scheme(redirect_path, request.get_host()):
             return redirect(redirect_path)
         else:
-            return redirect("/register/")
-    return redirect("/register/")
+            return redirect("/")
+    return redirect("/")
 
 def login_page(request):
     form = LoginForm(request.POST or None)
