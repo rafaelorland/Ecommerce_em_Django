@@ -34,9 +34,9 @@ def login_page(request):
     next_post = request.POST.get('next')
     redirect_path = next_ or next_post or None
     if form.is_valid():
-        username = form.cleaned_data.get("username")
-        password = form.cleaned_data.get("password")
-        user = authenticate(request, username=username, password=password) 
+        nome = form.cleaned_data.get("username")
+        senha = form.cleaned_data.get("password")
+        user = authenticate(request, username=nome, password=senha) 
         if user is not None:
             login(request, user)
             try:
