@@ -60,6 +60,7 @@ def cart_update(request):
                 "cartItemCount": cart_obj.products.count()
             }
             return JsonResponse(json_data)
+            #return JsonResponse({"message": "Erro 400"}, status = 400)
     return redirect("cart:home")
 
 def checkout_home(request):
@@ -68,8 +69,6 @@ def checkout_home(request):
     order_obj = None
     #se o carrinho acabou de ser criado, ele tá zerado
     #ou se o carrinho já existir mas não tiver nada dentro
-    if request.is_ajax():
-        print("Ajax request")
     if cart_created or cart_obj.products.count() == 0:
         return redirect("cart:home")  
     
@@ -100,6 +99,7 @@ def checkout_home(request):
             request.session['cart_items'] = 0
             del request.session['cart_id']
             return redirect("cart:success")
+    
     context = {
         "object": order_obj,
         "billing_profile": billing_profile,
