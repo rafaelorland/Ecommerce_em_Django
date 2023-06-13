@@ -53,7 +53,7 @@
     <p>Total do Frete: {{ object.shipping_total }}</p>
     <p>Total do Pedido: {{ object.total }}</p>
     <form class='form' method='POST' action="">{% csrf_token %}
-      <button type='submit' class='btn btn-success'>Finalizar Pedido</button>
+      <button type='submit' class='btn btn-outline-success'>Finalizar Pedido</button>
     </form>
   {% endif %}
   {% endif %}

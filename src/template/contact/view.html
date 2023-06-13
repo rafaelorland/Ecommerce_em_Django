@@ -12,7 +12,7 @@
           <p>{{ content }}</p>
           <form class='contact-form' method='POST' action='{% url "contact" %}'> {% csrf_token %}
             {{ form.as_p }}
-            <button type='submit' class='btn btn-'>Enviar</button>
+            <button type='submit' class='btn btn-outline-success'>Enviar</button>
           </form>
         </div>
       </div>
