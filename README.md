@@ -1,6 +1,7 @@
 # Sistema de E-commerce usando Django
 
-Este é um sistema desenvolvido pelo framework Django para criar um site de e-commerce. Foi desenvolvido como parte de um trabalho de gestão, e foi disponibilizado localmente no dia da apresentação para os participantes.
+Este é um sistema desenvolvido pelo framework Django para criar um site de e-commerce. Foi desenvolvido como parte de um trabalho de gestão aplicada à informática, e foi disponibilizado localmente no dia da apresentação para os participantes.
+
 
 ## Funcionalidades
 
